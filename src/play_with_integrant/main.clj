@@ -26,14 +26,3 @@
   (.stop server))
 
 ;;;; Note that we don't need to define a halt-key! for `:handler/greet`.
-
-(defonce the-system nil)
-
-(defn start []
-  (letfn [(init []
-            (ig/init (read-config)))]
-    (alter-var-root #'the-system (constantly (init)))))
-
-(defn stop []
-  (when the-system
-    (ig/halt! the-system)))

@@ -12,7 +12,8 @@
                  [ring "1.7.1"]]
   :main play-with-integrant.core
   :target-path "target/%s"
-  :profiles {:dev {:dependencies [[midje "1.9.4"]
+  :profiles {:dev {:dependencies [[integrant/repl "0.3.1"]
+                                  [midje "1.9.4"]
                                   [nomis-clj-repl-tools "0.1.2"]]
                    :plugins [[lein-nomis-ns-graph "0.14.2"]]
                    :source-paths ["dev"]
