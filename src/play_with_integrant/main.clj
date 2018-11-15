@@ -26,3 +26,8 @@
   (.stop server))
 
 ;;;; Note that we don't need to define a halt-key! for `:handler/greet`.
+
+;;;; ___________________________________________________________________________
+
+(defn -main []
+  (ig/init (read-config)))

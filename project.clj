@@ -10,7 +10,7 @@
                  ;; [org.slf4j/jul-to-slf4j "1.7.25"]
                  ;; [org.slf4j/log4j-over-slf4j "1.7.25"]
                  [ring "1.7.1"]]
-  :main play-with-integrant.core
+  :main play-with-integrant.main
   :target-path "target/%s"
   :profiles {:dev {:dependencies [[integrant/repl "0.3.1"]
                                   [midje "1.9.4"]
