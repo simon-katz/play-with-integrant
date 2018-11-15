@@ -41,3 +41,16 @@
 (defn the-system []
   "Return system state"
   ig-state/system)
+
+
+;;;; ___________________________________________________________________________
+
+(def z-system)
+
+(defn z-start []
+  (alter-var-root #'z-system
+                  (fn [_] (integrant.core/init (main/read-config)))))
+
+(defn z-stop []
+  (when (bound? #'z-system)
+    (integrant.core/halt! z-system)))
