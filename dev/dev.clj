@@ -54,3 +54,7 @@
 (defn z-stop []
   (when (bound? #'z-system)
     (integrant.core/halt! z-system)))
+
+(defn z-stop-002 []
+  (when (bound? #'z-system)
+    (integrant.core/halt! z-system [:my-key-002])))

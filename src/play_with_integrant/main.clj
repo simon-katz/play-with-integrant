@@ -33,5 +33,47 @@
 
 ;;;; ___________________________________________________________________________
 
+(defmethod ig/init-key :my-key-001 [k v]
+  (log/info "Initializing :my-key-001 .")
+  (log/debug "    x =" k)
+  (log/debug "    y =" v)
+  v)
+
+(defmethod ig/halt-key! :my-key-001 [k v]
+  (log/info "Halting :my-key-001 .")
+  (log/debug "    x =" k)
+  (log/debug "    y =" v)
+  :this-value-is-ignored-which-means-you-cannot-change-the-values-in-the-system)
+
+;;;; ___________________________________________________________________________
+
+(defmethod ig/init-key :my-key-002 [k v]
+  (log/info "Initializing :my-key-002 .")
+  (log/debug "    x =" k)
+  (log/debug "    y =" v)
+  v)
+
+(defmethod ig/halt-key! :my-key-002 [k v]
+  (log/info "Halting :my-key-002 .")
+  (log/debug "    x =" k)
+  (log/debug "    y =" v)
+  :this-value-is-ignored-which-means-you-cannot-change-the-values-in-the-system)
+
+;;;; ___________________________________________________________________________
+
+(defmethod ig/init-key :my-key-003 [k v]
+  (log/info "Initializing :my-key-003 .")
+  (log/debug "    x =" k)
+  (log/debug "    y =" v)
+  v)
+
+(defmethod ig/halt-key! :my-key-003 [k v]
+  (log/info "Halting :my-key-003 .")
+  (log/debug "    x =" k)
+  (log/debug "    y =" v)
+  :this-value-is-ignored-which-means-you-cannot-change-the-values-in-the-system)
+
+;;;; ___________________________________________________________________________
+
 (defn -main []
   (ig/init (read-config)))

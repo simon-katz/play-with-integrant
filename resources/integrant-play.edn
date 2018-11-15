@@ -1,3 +1,6 @@
 {:adapter/jetty {:port 8081
                  :handler #ig/ref :handler/greet}
- :handler/greet {:name "Alice"}}
+ :handler/greet {:name "Alice"}
+ :my-key-001 {:my-key-001-stuff 1}
+ :my-key-002 {:my-key-002-stuff #ig/ref :my-key-001}
+ :my-key-003 {:my-key-003-stuff #ig/ref :my-key-002}}
