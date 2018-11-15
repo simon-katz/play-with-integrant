@@ -14,6 +14,13 @@
 
 ;;;; TODO See manage-recordings-v3 stuff
 
+
+
+
+;;;; TODO Oh, I thought `ig-repl` would provide most of the following.
+
+;;;; TODO Hmmm, does this work? Calling `reset` throws an exception.
+
 (defn go [ig-config]
   (ig-repl/set-prep! main/read-config)
   (ig-repl/go))
@@ -45,16 +52,39 @@
 
 ;;;; ___________________________________________________________________________
 
+(def the-config (main/read-config))
+
 (def z-system)
 
-(defn z-start []
+(defn z-init []
   (alter-var-root #'z-system
-                  (fn [_] (integrant.core/init (main/read-config)))))
+                  (fn [_] (integrant.core/init the-config))))
 
-(defn z-stop []
-  (when (bound? #'z-system)
-    (integrant.core/halt! z-system)))
+(defn z-reinit
+  ([]
+   (integrant.core/init z-system))
+  ([keys]
+   (integrant.core/init z-system keys)))
 
-(defn z-stop-002 []
-  (when (bound? #'z-system)
-    (integrant.core/halt! z-system [:my-key-002])))
+(defn z-halt!
+  ([]
+   (assert (bound? #'z-system))
+   (integrant.core/halt! z-system))
+  ([keys]
+   (assert (bound? #'z-system))
+   (integrant.core/halt! z-system keys)))
+
+
+(comment
+
+  ;; Bug, I think. This sequence does not stop the server, and we get an
+  ;; "Address already in use" error when trying to start.
+  ;; Ah! You are using `alter-var-root` -- that's blatting things.
+
+  (z-init)
+  (z-halt! [:my-key-002])
+  (z-reinit [:my-key-002])
+  (z-halt!)
+  (z-reinit)
+
+  )
