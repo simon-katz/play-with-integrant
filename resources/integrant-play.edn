@@ -1,3 +1,3 @@
-{:adapter/jetty {:port 8080
+{:adapter/jetty {:port 8081
                  :handler #ig/ref :handler/greet}
  :handler/greet {:name "Alice"}}
