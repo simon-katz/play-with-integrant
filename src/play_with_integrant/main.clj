@@ -17,13 +17,13 @@
                        (dissoc :handler)
                        (assoc :join? false))))
 
-(defmethod ig/init-key :handler/greet [_ {:keys [name]}]
-  (fn [_] (resp/response (str "Hello " name))))
+(defmethod ig/halt-key! :adapter/jetty [_ server]
+  (.stop server))
 
 ;;;; ___________________________________________________________________________
 
-(defmethod ig/halt-key! :adapter/jetty [_ server]
-  (.stop server))
+(defmethod ig/init-key :handler/greet [_ {:keys [name]}]
+  (fn [_] (resp/response (str "Hello " name))))
 
 ;;;; Note that we don't need to define a halt-key! for `:handler/greet`.
 
