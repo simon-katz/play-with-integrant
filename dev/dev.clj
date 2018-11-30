@@ -85,6 +85,6 @@
   (z-halt! [:my-key-002])
   (z-reinit [:my-key-002])
   (z-halt!)
-  (z-reinit)
+  (z-reinit) ; This fails with org.eclipse.jetty.server.Server cannot be cast to clojure.lang.IPersistentMap
 
   )
