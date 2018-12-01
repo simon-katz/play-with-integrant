@@ -1,5 +1,6 @@
 (ns play-with-integrant.main
   (:require [clojure.java.io :as io]
+            [clojure.string :as str]
             [integrant.core :as ig]
             [ring.adapter.jetty :as jetty]
             [ring.util.response :as resp]
@@ -25,9 +26,16 @@
 
 ;;;; ___________________________________________________________________________
 
+(defn make-greeting [name]
+  (str/join " "
+            ["Hello there,"
+             name]))
+
 (defmethod ig/init-key :handler/greet [_ {:keys [name]}]
   (log/info "Initializing :handler/greet .")
-  (fn [_] (resp/response (str "Hello " name))))
+  (fn [_] (resp/response (str/join " "
+                                   ["[Less-dynamic string]"
+                                    (make-greeting name)]))))
 
 ;;;; Note that we don't need to define a halt-key! for `:handler/greet`.
 
