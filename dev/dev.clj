@@ -17,27 +17,25 @@
             [integrant.repl.state :as ig-state]
             [midje.repl :refer :all]
             [nomis-clj-repl-tools :refer :all]
-            [play-with-integrant.main :as main]
-            [taoensso.timbre :as log]
-            [integrant.core :as ig]))
+            [play-with-integrant.main :as main]))
 
 (ig-repl/set-prep! main/read-config)
 
-(defn the-preparer [] ig-state/preparer)
-(defn the-config   [] ig-state/config)
-(defn the-system   [] ig-state/system)
+;; (defn the-preparer [] ig-state/preparer)
+;; (defn the-config   [] ig-state/config)
+;; (defn the-system   [] ig-state/system)
 
-(comment
+;; (comment
 
-  [ig-state/preparer
-   ig-state/config
-   ig-state/system]
+;;   [ig-state/preparer
+;;    ig-state/config
+;;    ig-state/system]
 
-  )
+;;   )
 
-;;;; TODO Maybe define `stop` and `start` functions that tell the user what they
-;;;;      should use instead. ("This project uses Integrant. You want xxxx.".)
+;; ;;;; TODO Maybe define `stop` and `start` functions that tell the user what they
+;; ;;;;      should use instead. ("This project uses Integrant. You want xxxx.".)
 
-;;;; TODO Learn all the `ig-repl` functions above.
-;;;; TODO What about `ig-repl/suspend`?
-;;;; TODO Isn't there a `resume` thing?
+;; ;;;; TODO Learn all the `ig-repl` functions above.
+;; ;;;; TODO What about `ig-repl/suspend`?
+;; ;;;; TODO Isn't there a `resume` thing?
