@@ -3,7 +3,7 @@
   :handler #ig/ref :play-with-integrant.layer-1/top-level-handler}
  ;;
  :play-with-integrant.layer-1/top-level-handler
- {:name "Alice"} ; TODO Seems nuts to have `:name` here
+ {:name "Alice"} ; TODO Seems nuts to have `:name` here. Just a bad example, I think.
  ;;
  :play-with-integrant.playground/key-001
  {:play-with-integrant.playground/key-001 1}
