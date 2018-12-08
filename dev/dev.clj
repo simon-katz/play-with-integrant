@@ -31,7 +31,7 @@
     (ig/load-namespaces config-for-ig)
     config-for-ig))
 
-(ig-repl/set-prep! dev-prep)
+(ig-repl/set-prep! dev-prep) ; How does this tie in with `ig/prep`?
 
 (defn the-ig-preparer [] ig-state/preparer)
 (defn the-ig-config   [] ig-state/config)
