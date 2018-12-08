@@ -6,12 +6,12 @@
 
 (defmethod ig/init-key :play-with-integrant.playground/key-001
   [k v]
-  (log/info "Initializing `play-with-integrant.playground/key-001`.")
+  (log/info "Initializing `:play-with-integrant.playground/key-001`.")
   {:wrapped-by-init v})
 
 (defmethod ig/halt-key! :play-with-integrant.playground/key-001
   [k v]
-  (log/info "Halting `play-with-integrant.playground/key-001`.")
+  (log/info "Halting `:play-with-integrant.playground/key-001`.")
   :this-value-is-ignored-which-means-you-cannot-change-the-values-in-the-system)
 
 ;;;; ___________________________________________________________________________
