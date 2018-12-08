@@ -1,4 +1,5 @@
 (ns play-with-integrant.system.main
+  (:gen-class)
   (:require [integrant.core :as ig]
             [play-with-integrant.system.config-for-ig :as config-for-ig]))
 
