@@ -1,8 +1,8 @@
 {:play-with-integrant.layer-1/webserver
  {:port 8081
-  :handler #ig/ref :play-with-integrant.layer-1/handlers}
+  :handler #ig/ref :play-with-integrant.layer-1/top-level-handler}
  ;;
- :play-with-integrant.layer-1/handlers
+ :play-with-integrant.layer-1/top-level-handler
  {:name "Alice"} ; TODO Seems nuts to have `:name` here
  ;;
  :play-with-integrant.playground/key-001
