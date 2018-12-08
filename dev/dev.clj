@@ -21,24 +21,29 @@
             [play-with-integrant.system.config :as config]
             [integrant.core :as ig]))
 
-(ig-repl/set-prep! #(let [config (config/read-config)] ; TODO Is this right?
-                      (ig/load-namespaces config)
-                      config))
+(defn dev-prep [] ; TODO Is this right?
+  (let [config (config/read-config)]
+    (ig/load-namespaces config)
+    config))
 
-;; (defn the-preparer [] ig-state/preparer)
-;; (defn the-config   [] ig-state/config)
-;; (defn the-system   [] ig-state/system)
+(ig-repl/set-prep! dev-prep)
 
-;; (comment
+(defn the-preparer [] ig-state/preparer)
+(defn the-config   [] ig-state/config)
+(defn the-system   [] ig-state/system)
 
-;;   [ig-state/preparer
-;;    ig-state/config
-;;    ig-state/system]
+(defn the-info []
+  {:preparer ig-state/preparer
+   :config   ig-state/config
+   :system   ig-state/system})
 
-;;   )
+(defn start []
+  (throw (Exception. "This is an Integrant project. You want `xxxx`.")) ; TODO
+  )
 
-;; ;;;; TODO Maybe define `stop` and `start` functions that tell the user what they
-;; ;;;;      should use instead. ("This project uses Integrant. You want xxxx.".)
+(defn stop []
+  (throw (Exception. "This is an Integrant project. You want `halt`.")) ; TODO
+  )
 
 ;; ;;;; TODO Learn all the `ig-repl` functions above.
 ;; ;;;; TODO What about `ig-repl/suspend`?
