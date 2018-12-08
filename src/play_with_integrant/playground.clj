@@ -16,12 +16,6 @@
 
 ;;;; ___________________________________________________________________________
 
-;;;; TODO Getting rid of this and doing `reset` doesn't give an error.
-;;;;      The methods are still there.
-;;;;      So this breaks dev workflow.
-;;;;      Is this a general thing when you define methods for multimethods that
-;;;;      are defined in libraries?
-
 (defmethod ig/init-key :play-with-integrant.playground/key-002
   [k v]
   (log/info "Initializing `play-with-integrant.playground/key-002`.")
