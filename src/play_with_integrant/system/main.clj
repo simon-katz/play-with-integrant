@@ -1,9 +1,6 @@
 (ns play-with-integrant.system.main
-  (:require [clojure.string :as str]
-            [integrant.core :as ig]
-            [play-with-integrant.system.config :as config]
-            [ring.util.response :as resp]
-            [taoensso.timbre :as log]))
+  (:require [integrant.core :as ig]
+            [play-with-integrant.system.config :as config]))
 
 (defn -main []
   (let [config (config/read-config)]
