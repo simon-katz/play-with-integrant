@@ -17,10 +17,10 @@
             [integrant.repl.state :as ig-state]
             [midje.repl :refer :all]
             [nomis-clj-repl-tools :refer :all]
-            [play-with-integrant.system.main :as main] ; TODO Delete this.
+            [play-with-integrant.system.config :as config]
             [integrant.core :as ig]))
 
-(ig-repl/set-prep! #(let [config (main/read-config)] ; TODO Is this right?
+(ig-repl/set-prep! #(let [config (config/read-config)] ; TODO Is this right?
                       (ig/load-namespaces config)
                       config))
 
