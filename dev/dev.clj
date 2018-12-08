@@ -3,7 +3,8 @@
             [clojure.pprint :refer [pp pprint]]
             [clojure.repl :refer :all]
             [clojure.tools.namespace.move :refer :all]
-            ;; [clojure.tools.namespace.repl :refer :all]
+            [clojure.tools.namespace.repl :refer [refresh
+                                                  refresh-all]]
             [com.nomistech.clj-utils :as nu]
             [integrant.repl
              :as ig-repl
