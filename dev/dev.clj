@@ -9,17 +9,17 @@
             [integrant.core :as ig]
             [integrant.repl
              :as ig-repl
-             :refer [
-                     ;; TODO Learn all the `ig-repl` functions.
-                     ;; TODO Do you need all these?
+             :refer [;; Don't need these:
                      prep
                      init
                      go
+                     ;; Can just use these:
+                     reset
+                     reset-all
                      suspend
                      resume
                      halt
-                     reset
-                     reset-all
+                     ;; TODO Learn this:
                      clear]]
             [integrant.repl.state :as ig-state]
             [midje.repl :refer :all]
