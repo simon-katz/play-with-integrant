@@ -6,6 +6,7 @@
             [clojure.tools.namespace.repl :refer [refresh
                                                   refresh-all]]
             [com.nomistech.clj-utils :as nu]
+            [integrant.core :as ig]
             [integrant.repl
              :as ig-repl
              :refer [prep
@@ -18,8 +19,7 @@
             [integrant.repl.state :as ig-state]
             [midje.repl :refer :all]
             [nomis-clj-repl-tools :refer :all]
-            [play-with-integrant.system.config-for-ig :as config-for-ig]
-            [integrant.core :as ig]))
+            [play-with-integrant.system.config-for-ig :as config-for-ig]))
 
 (defn dev-prep [] ; TODO Is this right?
   (let [config-for-ig (config-for-ig/read-config)]
