@@ -1,0 +1,2 @@
+* play-with-integrant
+This is an example project that shows how to use Integrant (or at least one way of using Integrant).
