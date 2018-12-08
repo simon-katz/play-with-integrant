@@ -6,5 +6,6 @@
             [taoensso.timbre :as log]))
 
 (defn -main []
-  (ig/load-namespaces) ; TODO Seems odd to do this at run time. Is this right?
-  (ig/init (config/read-config)))
+  (let [config (config/read-config)]
+    (ig/load-namespaces config) ; TODO Seems odd to do this at run time. Is this right?
+    (ig/init config)))
