@@ -14,6 +14,8 @@
   (log/info "Halting `play-with-integrant.playground/key-001`.")
   :this-value-is-ignored-which-means-you-cannot-change-the-values-in-the-system)
 
+;;;; TODO Add `ig/suspend-key!` and `ig/resume-key` examples.
+
 ;;;; ___________________________________________________________________________
 
 (defmethod ig/init-key :play-with-integrant.playground/key-002

@@ -9,9 +9,14 @@
             [integrant.core :as ig]
             [integrant.repl
              :as ig-repl
-             :refer [prep
+             :refer [
+                     ;; TODO Learn all the `ig-repl` functions.
+                     ;; TODO Do you need all these?
+                     prep
                      init
                      go
+                     suspend
+                     resume
                      halt
                      reset
                      reset-all
@@ -38,12 +43,11 @@
    :the-ig-system   (the-ig-system)})
 
 (defn start []
-  (throw (Exception. "This is an Integrant project. You want `xxxx`.")) ; TODO
-  )
+  (throw
+   (Exception. "This is an Integrant project. You want `resume`." ; TODO Right?
+               )))
 
 (defn stop []
-  (throw (Exception. "This is an Integrant project. You want `halt`.")))
-
-;; ;;;; TODO Learn all the `ig-repl` functions above.
-;; ;;;; TODO What about `ig-repl/suspend`?
-;; ;;;; TODO Isn't there a `resume` thing?
+  (throw
+   (Exception. "This is an Integrant project. You want `suspend`." ; TODO Right?
+               )))

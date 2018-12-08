@@ -12,6 +12,6 @@
                        (assoc :join? false))))
 
 (defmethod ig/halt-key! :play-with-integrant.layer-1/webserver
-  [_ server]
+  [_ webserver]
   (log/info "Halting `:play-with-integrant.layer-1/webserver`.")
-  (.stop server))
+  (.stop webserver))
