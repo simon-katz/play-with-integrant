@@ -39,10 +39,8 @@
 
 (defn start []
   (throw
-   (Exception. "This is an Integrant project. You want `resume`." ; TODO Right?
-               )))
+   (Exception. "This is an Integrant project. You want `resume`.")))
 
 (defn stop []
   (throw
-   (Exception. "This is an Integrant project. You want `suspend`." ; TODO Right?
-               )))
+   (Exception. "This is an Integrant project. You want `suspend`.")))
