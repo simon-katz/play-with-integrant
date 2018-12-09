@@ -26,7 +26,7 @@
             [nomis-clj-repl-tools :refer :all]
             [play-with-integrant.system.config-for-ig :as config-for-ig]))
 
-(ig-repl/set-prep! config-for-ig/read-config-loading-namespaces) ; How does this tie in with `ig/prep`?
+(ig-repl/set-prep! config-for-ig/read-config-loading-namespaces) ; TODO How does this tie in with `ig/prep`? (Should this be passed through `ig/prep`? If so, refactor this and `play-with-integrant.system.main/-main`.)
 
 (defn the-ig-preparer [] ig-state/preparer)
 (defn the-ig-config   [] ig-state/config)
