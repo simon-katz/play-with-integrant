@@ -3,7 +3,13 @@
             [integrant.core :as ig]))
 
 (defn ^:private read-config []
-  (ig/read-string (slurp (io/resource "integrant-play.edn"))))
+  (let [config-filename "ig-config.edn"
+        config-file     (io/resource config-filename)]
+    (assert config-file (format "Could not find file  \"%s\""
+                                config-filename))
+    (-> config-file
+        slurp
+        ig/read-string)))
 
 (defn read-config-loading-namespaces []
   (let [config-for-ig (read-config)]
